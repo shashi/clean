@@ -3,10 +3,12 @@
  * @package sesky
  */
 ?>
-<section id="post-<?php the_ID(); ?>" class="post pure-u-1-2">
-    <header class="post-header">
+<section id="post-<?php the_ID(); ?>"class="imgpost pure-u-1-3">
+<img class="post-cover" src="wp-content/themes/sesky/images/post.png" />
+    <header class="caption">
+		
         <?php sesky_avatar(); ?>
-             <h2 class="post-title pure-u-1"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+             <div class="caption-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></div>
 <!--
         <p class="post-meta pure-u-1">
             By <a href="#" class="post-author">Anon</a>
@@ -25,11 +27,12 @@
         </p>
 -->
 <?php sesky_posted_on(); ?>
-    </header>
 
-    <div class="post-description pure-u-1">
+    <div class="caption-text">
         <?php the_content(); ?>
     </div>
+    </header>
+
 </section>
 <?php /*
 
