@@ -4,11 +4,13 @@
  */
 ?>
 <section id="post-<?php the_ID(); ?>"class="imgpost pure-u-1-3">
-<img class="post-cover" src="wp-content/themes/sesky/images/post.png" />
+<?php the_post_thumbnail( array(300,170) , array('class' => 'post-cover')); ?>
+<div class="border" ></div>
     <header class="caption">
 		
         <?php sesky_avatar(); ?>
-             <div class="caption-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></div>
+         
+             <div class="caption-title"><a class="caption-title" href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></div>
 <!--
         <p class="post-meta pure-u-1">
             By <a href="#" class="post-author">Anon</a>
@@ -29,7 +31,7 @@
 <?php sesky_posted_on(); ?>
 
     <div class="caption-text">
-        <?php the_content(); ?>
+        <?php //the_content(); ?>
     </div>
     </header>
 
