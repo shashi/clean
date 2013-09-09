@@ -6,12 +6,14 @@
 
 a {
     text-decoration: none;
-    color: #999;
+    color: #a1a17B;
 }
 
 body {
-    font-family: Lato;
+    font-family: 'Lato';
 }
+
+
 a:hover,
 a:focus {
     text-decoration: underline;
@@ -30,37 +32,24 @@ a:focus {
     bottom: 0;
     width: 25%;
     margin-left: -25%;
-    background: url(../images/lighthouse.jpg);
+    background: url(../images/beach2.jpg);
     background-size:auto 100%;
-    color: #fff;
-}
-.page .sidebar {
-    background: transparent;
-    color: #222;
-}
-.page .menu-part {
-    border-color: #999;
-}
-.page .nav-item a {
-    color: #999;
-}
-.page .post-title {
-    font-weight: bold;
-}
-.page .post-description {
-    color: #222;
+    color: #444;
 }
 
 .header {
     margin: 2em;
+    margin-left:1em;
     height: 95%;
-    margin-top: 3em;
+    margin-top: 2em;
     width: 80%;
 }
 .menu-part {
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 2.1em;
+    border-left: 1px solid #E1E1BB;
     opacity: 0.8;
     padding: 0;
+    color: #999;
 }
 
 .brand-title,
@@ -69,21 +58,18 @@ a:focus {
 }
 .brand-title {
     float: right;
-    font-family: 'Playfair Display';
-    font-weight: bold;
+    font-weight: normal;
     text-transform: none; 
-    margin-right: 16px;
-    font-family: Lato;
-    text-transform: uppercase; 
-    font-weight: 300;
+    margin-right: 18px;
+    font-family: 'Oleo Script Swash Caps';
     line-height: 0.9em;
-    opacity: 0.8;
     width: 110px;
     text-align: right;
+    color: #2B445C;
 }
 
 .brand-tagline {
-    font-family: Lato;
+    font-family: 'Lato';
     font-size: 100%;
     font-weight: 100;
     color: rgb(142, 142, 214);
@@ -92,7 +78,7 @@ a:focus {
 .nav-list {
     margin: 0;
     margin-left: 1em;
-    font-family: Lato;
+    font-family: 'Lato';
     padding: 0;
     list-style: none;
 }
@@ -101,26 +87,60 @@ a:focus {
 }
 .nav-item a {
     background: transparent;
+    color: #2B445C;
     margin-top: 1em;
 }
 .nav-item a:hover,
 .nav-item a:focus {
-    color: #000;
+    color: #07242D;
     text-decoration: none;
 }
 
+.inimage-subhead, 
 .content-subhead {
+    font-family: Lato;
+    text-align: center;
     text-transform: uppercase;
-    color: #aaa;
-    border-bottom: 1px solid #eee;
-    padding: 0.4em 0;
     font-size: 80%;
+    color: #666;
     font-weight: 500;
     letter-spacing: 0.1em;
 }
+.content-subhead {
+    padding: 0;
+    border-top: 1px solid #f1f1f1;
+    line-height: 0;
+    height: 1em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+.content-subhead span {
+    background: white;
+    padding: 0 2em;
+}
+.content-subhead .post-header {
+    float: right;
+}
+
+
+.featured-excerpt .meta-wrap {
+    height: 3em;
+}
+.featured-excerpt .inimage-subhead {
+    position: absolute;
+    top: -.7em;
+    right: 0;
+    padding: 0.5em 2em;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+.content-subhead.recent {
+    margin-bottom: 0;
+    margin-top: 3em;
+}
 
 .content {
-    padding: 2em 3em 0;
+    padding: 0 2em;
 }
 
 .post {
@@ -130,32 +150,32 @@ a:focus {
     padding-right: 0;
 }
 .post-title {
-    font-size: 2em;
-    color: #000;
-    font-family: 'Playfair Display';
+    font-size: 1.5em;
     font-family: Lato;
-    font-weight: 300;
-    margin-bottom: 0.2em;
-    color: #444;
+    font-weight: 800;
+    margin-bottom: 0.4em;
+    color: #333;
 }
 .post-avatar {
     border-radius: 50px;
+    padding: 3px;
+    background: #E1E1BB;
     float: right;
     margin-left: 1em;
 }
 .page-meta-wrap {
+    font-family: Lato;
     color: #444;
-    font-size: 0.9em;
-    font-size: small;
+    font-size: 0.8em;
 }
 
 div.name {
-    color: #666;
+    color: #a1a17B;
     font-size: 1.5em;
     font-weight: bold;
 }
 .page-meta-wrap {
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #E1E1BB;
     padding-top: 1em;
     text-align: right;
 }
@@ -164,11 +184,10 @@ div.name {
 }
 
 .post-description {
-    font-family: 'Gentium Book Basic';
-    font-family: Lato;
+    font-family: 'PT Serif Caption';
     font-size: 16px;
     font-weight: normal;
-    color: #555;
+    color: #333;
     line-height: 24px;
 }
 .page-meta-wrap {
@@ -178,9 +197,9 @@ div.name {
     margin-top: 0.5em;
 }
 .post-meta {
-    color: #999;
-    font-size: 90%;
-    font-family: Lato;
+    color: #a1a17B;
+    font-size: 0.8em;
+    font-family: 'Lato';
     margin: 0;
 }
 
@@ -223,6 +242,31 @@ div.name {
 .footer .pure-menu a:focus {
     background: none;
 }
+.page .sidebar {
+    background: transparent;
+    color: #222;
+}
+.page .menu-part {
+    border-color: #E1E1BB;
+}
+.page .nav-item a {
+    color: #666;
+}
+.page .post-title {
+    font-weight: bold;
+    font-size: 2.2em;
+    color: #444;
+}
+.page .post-description {
+    color: #222;
+    font-family: 'PT Serif Caption';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+.page .header {
+}
+
 
 @media (max-width: 900px) {
     .sidebar {
@@ -255,6 +299,7 @@ div.name {
         padding: 0 1em;
     }
     .menu-part {
+        margin-top: 0;
         border: none;
     }
 
@@ -267,67 +312,111 @@ div.name {
 }
 
 
-
-
-
-
-
-
-.imgpost
-{
-height:170px;
-width:300px;
-cursor:pointer;
+.featured-excerpt {
+    padding-right: 1em;
+    margin-top: 2em;
 }
 
-.post-cover
-{
-position:absolute;
-padding:10px;
-height:170px;
-width:300px;
+.editors-pick h2 {
+    margin-top: 0;
+}
+.editors-pick {
+    border: 1px solid #f1f1f1;
+    padding: 0 0.6em;
 }
 
-.imgpost .caption
-{
-position:absolute;
-margin:10px;
-padding-left:6px;
-box-shadow:0px 0px 10px rgba(0,0,0,0.7);
-height:150px;
-width:280px;
-opacity:0;
-background-color:rgba(0,0,0,0.7);
-webkit-transition:opacity 0.3s ease-in-out;
-transition:opacity 0.3s ease-in-out
-}
-.imgpost:hover .caption
-{
-opacity:1;
+.featured-excerpt {
+    height: 200px;
+    background-size: 100%;
+    position: relative;
 }
 
-.caption-title
-{
-font-size: 2em;
-color: #000;
-font-family: 'Playfair Display';
-font-family: Lato;
-font-weight: 300;
-color: #fff;
+.featured-excerpt .surface {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2em;
+    padding-bottom: 1em;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 1s ease;
+}
+.featured-excerpt  {
+    color: #fff;
+}
+.featured-excerpt .post-title {
+    color: #fff;
 }
 
-.caption-text
-{
-color: #AAA;
-font-size: 90%;
-font-family: Lato;
-margin: 0;
+.featured-excerpt a {
+    color: #aaa;
 }
 
-.tile-avatar
-{
-position: absolute;
-border-radius: 50px 50px 50px 50px;
-right: -10px;
-top: -10px;
+.featured-excerpt .post-meta {
+    float: right;
+    clear: both;
+}
+.featured-excerpt .post-avatar {
+    background: white;
+    clear: both;
+}
+.featured-excerpt:hover {
+    background: rgba(0, 0, 0, 1);
+
+}
+
+.featured-excerpt .post-description {
+    margin: 0;
+    margin-bottom: 0.5em;
+    color: #ccc;
+}
+.featured-excerpt .post-title {
+    margin: 0;
+}
+.featured-excerpt .post-meta {
+    margin-top: 1em;
+}
+
+.podcast-title {
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    font-family: 'Playfair Display';
+    font-style: italic;
+    color: #777;
+    font-size: 3em;
+    margin-top: 100px;
+}
+
+.brand-title em {
+    font-family: 'Playfair Display';
+    text-transform: lowercase;
+    font-size: 80%;
+}
+
+.featured-excerpt:hover .surface {
+    background: #000;
+}
+
+.menu-dot {
+    background: #333;
+    display: block;
+    position: absolute;
+    margin-top: -1em;
+    right: 3.5em;
+    padding: 0.5em;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
 }
