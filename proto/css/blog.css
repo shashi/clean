@@ -45,7 +45,7 @@ a:focus {
     width: 80%;
 }
 .menu-part {
-    margin-top: 2.1em;
+    margin-top: 2.5em;
     border-left: 1px solid #E1E1BB;
     opacity: 0.8;
     padding: 0;
@@ -108,7 +108,7 @@ a:focus {
 }
 .content-subhead {
     padding: 0;
-    border-top: 1px solid #f1f1f1;
+    border-top: 1px solid #ddd;
     line-height: 0;
     height: 1em;
     margin-bottom: 2em;
