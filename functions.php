@@ -1,149 +1,106 @@
 <?php
+
+if ( ! function_exists( 'clean_content_nav' ) ) :
 /**
- * sesky functions and definitions
- *
- * @package sesky
+ * Display navigation to next/previous pages when applicable
  */
+function clean_content_nav( $nav_id ) {
+	global $wp_query, $post;
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	// Don't print empty markup on single pages if there's nowhere to navigate.
+	if ( is_single() ) {
+		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+		$next = get_adjacent_post( false, '', false );
 
-if ( ! function_exists( 'sesky_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-function sesky_setup() {
+		if ( ! $next && ! $previous )
+			return;
+	}
 
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on sesky, use a find and replace
-	 * to change 'sesky' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'sesky', get_template_directory() . '/languages' );
+	// Don't print empty markup in archives if there's only one page.
+	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
+		return;
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
-	add_theme_support( 'automatic-feed-links' );
+	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging';
 
-	/**
-	 * Enable support for Post Thumbnails on posts and pages
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
+	?>
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?> pure-u-1 pagination">
 
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'sesky' ),
-	) );
+	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-	/**
-	 * Enable support for Post Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'clean' ) . '</span> %title' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'clean' ) . '</span>' ); ?>
+
+	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+
+		<?php if ( get_next_posts_link() ) : ?>
+		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'clean' ) ); ?></div>
+		<?php endif; ?>
+
+		<?php if ( get_previous_posts_link() ) : ?>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'clean' ) ); ?></div>
+		<?php endif; ?>
+
+	<?php endif; ?>
+
+	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
+	<?php
 }
-endif; // sesky_setup
-add_action( 'after_setup_theme', 'sesky_setup' );
-
+endif; // clean_content_nav
 /**
- * Setup the WordPress core custom background feature.
- *
- * Use add_theme_support to register support for WordPress 3.4+
- * as well as provide backward compatibility for WordPress 3.3
- * using feature detection of wp_get_theme() which was introduced
- * in WordPress 3.4.
- *
- * @todo Remove the 3.3 support when WordPress 3.6 is released.
- *
- * Hooks into the after_setup_theme action.
+ * Returns true if a blog has more than 1 category
  */
-function sesky_register_custom_background() {
-	$args = array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	);
+function _categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+		// Create an array of all the categories that are attached to posts
+		$all_the_cool_cats = get_categories( array(
+			'hide_empty' => 1,
+		) );
 
-	$args = apply_filters( 'sesky_custom_background_args', $args );
+		// Count the number of categories that are attached to the posts
+		$all_the_cool_cats = count( $all_the_cool_cats );
 
-	if ( function_exists( 'wp_get_theme' ) ) {
-		add_theme_support( 'custom-background', $args );
+		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+	}
+
+	if ( '1' != $all_the_cool_cats ) {
+		// This blog has more than 1 category so clean_categorized_blog should return true
+		return true;
 	} else {
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-		if ( ! empty( $args['default-image'] ) )
-			define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_custom_background();
+		// This blog has only 1 category so clean_categorized_blog should return false
+		return false;
 	}
 }
-add_action( 'after_setup_theme', 'sesky_register_custom_background' );
 
+if (! function_exists('_categories') ) :
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Prints HTML of comma separated categories
  */
-function sesky_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'sesky' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
+function _categories () {
+     if ( 'post' == get_post_type() ) {
+            $categories_list = get_the_category_list( __( ', ', 'clean' ) );
+
+            if ( $categories_list && _categorized_blog() ) {
+        ?>
+        <span class="cat-links">
+            <?php echo $categories_list; ?>
+        </span>
+
+        <?php } // End if categories ?>
+    <?php } // End if categories
 }
-add_action( 'widgets_init', 'sesky_widgets_init' );
+endif;
 
+if ( ! function_exists( '_posted_on' ) ) :
 /**
- * Enqueue scripts and styles
+ * Prints HTML with meta information for the current post-date/time and author.
  */
-function sesky_scripts() {
-	wp_enqueue_style( 'sesky-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'sesky-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'sesky-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'sesky-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
+function _posted_on() {
+    echo '<p class="post-meta pure-u-1">';
+    printf( __( 'By ', 'clean' ));
+    the_author_posts_link();
+    echo __(' in ');
+    _categories();
+    echo '</p>';
 }
-add_action( 'wp_enqueue_scripts', 'sesky_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
+endif;

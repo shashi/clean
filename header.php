@@ -1,20 +1,25 @@
 <!doctype html>
-<html <?php language_attributes(); ?>>
+
+<html lang="en">
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
-    <?php wp_head(); ?>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery-min.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/superfish.js"></script>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/superfish.css">
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/superfish-vertical.css">
+    <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name'); ?></title>
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700,400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:700,400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:700,400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkren:700,400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lovers+Quarrel:100,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
 
 </head>
-
-<body <?php body_class(); ?>>
-
-	<?php do_action( 'before' ); ?>
-<div class="pure-g-r" id="layout">
+<body>
 

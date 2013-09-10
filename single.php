@@ -1,31 +1,30 @@
-<?php
-/**
- * The Template for displaying all single posts.
- *
- * @package sesky
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div class="pure-g-r page" id="layout">
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php get_sidebar('single'); ?>
+    <div class="content pure-u-1">
+        <!-- A wrapper for all the blog posts -->
+        <div class="posts pure-g-r">
+            <!-- A single blog post -->
+            <section class="post pure-u-2-3">
+                <header class="post-header">
+                <br>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+                <?php 
+                    if ( has_post_thumbnail() ) {
+                      the_post_thumbnail();
+                    } 
+                ?>
+                <h2 class="post-title pure-u-1"><?php the_title(); ?></h2>
+                </header>
 
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'content', 'single' ); ?>
-
-			<?php sesky_content_nav( 'nav-below' ); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() )
-					comments_template();
-			?>
-
-		<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+                <div class="post-description pure-u-1">
+                    <?php the_content(); ?>
+                </div>
+            </section>
+        </div>
+        <?php get_footer(); ?>
+    </div>
+  <?php endwhile; endif; ?>
+</div>
