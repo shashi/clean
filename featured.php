@@ -1,4 +1,4 @@
-<div class="pure-u-1 featured-excerpt" style="background: url(/wp-content/podcast.jpg)">
+<div class="pure-u-1 featured-excerpt" style="position: relative; z-index: 0; background: url(/wp-content/podcast.jpg)">
 
   <h1 class="inimage-subhead">Editors' Pick</h1>
 

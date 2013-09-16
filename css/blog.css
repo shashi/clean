@@ -27,11 +27,13 @@ a:focus {
 
 .sidebar {
     -webkit-transition: opacity 2s ease;
+    -moz-transition: opacity 2s ease;
+    transition: opacity 2s ease;
     position: fixed;
     top: 0;
     bottom: 0;
+    left: 0;
     width: 25%;
-    margin-left: -25%;
     background: url(../images/beach2.jpg);
     background-size:auto 100%;
     color: #444;
@@ -47,7 +49,6 @@ a:focus {
 .menu-part {
     margin-top: 2em;
     border-left: 1px solid #E1E1BB;
-    opacity: 0.8;
     padding: 0;
     color: #999;
 }
@@ -91,8 +92,8 @@ a:focus {
 }
 .nav-item a {
     background: transparent;
-    font-family: 'PT Sans Caption';
-    color: #2B445C;
+    color: #3B546C;
+    font-weight: 300;
     margin-top: 1em;
 }
 .nav-item a:hover,
@@ -288,10 +289,6 @@ div.name {
 
 
 
-.featured-excerpt {
-    margin-top: 0;
-}
-
 .editors-pick h2 {
     margin-top: 0;
 }
@@ -301,8 +298,9 @@ div.name {
 }
 
 .featured-excerpt {
+    z-index: 0;
+    margin-top: 0;
     padding-top: 4em;
-    background-size: 100%;
     position: relative;
 }
 
@@ -310,6 +308,8 @@ div.name {
     padding: 2em;
     width:100%;
     background: rgba(0, 0, 0, 0.667);
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
     transition: all 1s ease;
 }
 .featured-excerpt .surface p {
@@ -335,10 +335,6 @@ div.name {
 .featured-excerpt .avatar {
     background: white;
     clear: both;
-}
-.featured-excerpt:hover {
-    background: rgba(0, 0, 0, 1);
-
 }
 
 .featured-excerpt .post-description {
@@ -404,19 +400,36 @@ div.name {
     line-height: 1.1em;
     color: #666;
 }
+
 .wp-post-image {
     height: auto;
 }
+
 .navigation-paging .nav-previous {
     float: left;
 }
+
 .navigation-paging .nav-next {
     float: right;
 }
+
 .navigation-paging {
     margin-bottom: 2em;
     padding-top: 0.5em;
     border-top: #ccc 1px solid;
+}
+
+.real-menu {
+    display: none;
+}
+
+#nav li {
+    display: none;
+}
+
+.sf-menu, .real-menu {
+    position: relative;
+    z-index: 9999999;
 }
 
 @media (max-width: 900px) {

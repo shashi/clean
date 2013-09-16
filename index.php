@@ -1,10 +1,6 @@
 <?php get_header(); ?>
 
 <div class="pure-g-r" id="layout">
-    <?php
-        get_sidebar(); 
-
-    ?>
     <div class="content pure-u-1">
         <?php if (is_front_page()) {
             require(dirname(__FILE__) . '/featured.php');
@@ -41,4 +37,10 @@
             <p><?php _e('Nothing to show here.'); ?></p>
         <?php endif; ?>
     </div>
+
+<?php
+    get_sidebar(); 
+?>
 </div>
+
+<?php get_footer(); ?>
