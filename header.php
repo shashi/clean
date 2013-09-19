@@ -6,18 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo('name'); ?></title>
-    <?php
-    foreach(
-        array('pure-min.css',
-              'blog.css',
-              'superfish.css',
-              'superfish-vertical.css') as $css) {
-
-        $css = get_template_directory_uri() . "/css/" . $css;
-        echo "<link rel='stylesheet' href='$css'></link>";
-    }
-    ?>
-
+<link rel="stylesheet" href="<?php 
+        echo get_template_directory_uri() . "/css/clean.css";
+?>">
+<?php  wp_head(); ?>
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700,400,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cardo:700,400,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Merriweather:700,400,400italic' rel='stylesheet' type='text/css'>

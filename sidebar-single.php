@@ -20,7 +20,7 @@ window.onscroll = onScroll;
     <header class="header pure-u-1">
         <div class="pure-g-r">
             <div class="pure-u-3-5">
-                <h1 class="brand-title"><a href="/"><em>The</em> Beach Side Blues</a></h1>
+                <h1 class="brand-title"><a href="/">The Beach Side Blues</a></h1>
             </div>
             <div class="menu-part pure-u-2-5">
             <div id="clean-nav">
@@ -32,7 +32,7 @@ window.onscroll = onScroll;
                         <a href="/podcast">podcast</a>
                     </li>
                     <li class="nav-item" id="menu-opener">
-                        <a href="#">menu &raquo;</a>
+                        <a href="javascript:void()">menu &raquo;</a>
                     </li>
                 </ul>
             </div>

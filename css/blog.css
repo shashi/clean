@@ -43,17 +43,23 @@ a:focus {
     margin: 2em;
     margin-left:1em;
     height: 95%;
-    margin-top: 70%;
+    margin-top: 90%;
     width: 80%;
 }
+.page .real-menu {
+    top: 5.6em;
+    margin-left: 4.8em;
+}
 .menu-part {
-    margin-top: 2em;
     padding: 0;
     color: #999;
 }
 
 #clean-nav {
-    border-left: 1px solid #E1E1BB;
+    border-left: 1px solid #999;
+}
+.page #clean-nav {
+    border-color: #E1E1BB;
 }
 
 .brand-title,
@@ -75,6 +81,9 @@ a:focus {
     text-align: right;
 }
 .brand-title a {
+    color: #333;
+}
+.page .brand-title a {
     color: #2B445C;
 }
 .brand-title a:hover {
@@ -96,13 +105,14 @@ a:focus {
     list-style: none;
 }
 .nav-item {
+    line-height: 18px;
+    font-size: 16px;
     zoom: 1;
 }
 .nav-item a {
     background: transparent;
-    color: #4B647C;
+    color: #444;
     font-weight: 300;
-    margin-top: 1em;
 }
 .nav-item a:hover,
 .nav-item a:focus {
@@ -437,9 +447,9 @@ div.name {
 .real-menu {
     display: none;
     float: right;
-    margin-left: 7em;
-    margin-top: -14em;
     position:absolute;
+    margin-left: 7em;
+    top: 20%;
 }
 
 #nav li {
@@ -472,6 +482,9 @@ div.name {
 .four-naught-four h2 {
     font-size: 2em;
 
+}
+.page .header {
+    margin-top: 3em;
 }
 
 @media (max-width: 900px) {
