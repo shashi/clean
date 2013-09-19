@@ -99,7 +99,7 @@ function _posted_on() {
     echo '<p class="post-meta pure-u-1">';
     printf( __( 'By ', 'clean' ));
     the_author_posts_link();
-    echo __(' in ');
+    echo __(' in ') . '';
     _categories();
     echo '</p>';
 }

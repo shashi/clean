@@ -34,13 +34,15 @@
         <?php endwhile;
             clean_content_nav('pagination');
         else: ?>
-            <p><?php _e('Nothing to show here.'); ?></p>
+            <section class="pure-u-1 four-naught-four">
+                <h2>Hang in there!</h2>
+                <p><?php _e('404: Looks like what you are looking for doesn\'t yet exist.'); ?></p>
+            </section>
         <?php endif; ?>
     </div>
 
 <?php
     get_sidebar(); 
 ?>
-</div>
 
 <?php get_footer(); ?>

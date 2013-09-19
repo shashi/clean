@@ -34,7 +34,6 @@
             ul.find("> li").each(function () {
                 var sub = getSub($(this));
                 if (sub.length > 0) {
-                    console.log("Yo");
                     /*
                     self = this;
                     var wrapped = hoverDelay(function () {
