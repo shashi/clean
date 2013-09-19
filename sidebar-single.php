@@ -32,7 +32,7 @@ window.onscroll = onScroll;
                         <a href="/podcast">podcast</a>
                     </li>
                     <li class="nav-item" id="menu-opener">
-                        <a href="javascript:void()">menu &raquo;</a>
+                        <a href="javascript:void()">menu &rarr;</a>
                     </li>
                 </ul>
             </div>

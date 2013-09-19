@@ -14,7 +14,7 @@
             <a href="/category/podcast">podcast</a>
           </li>
           <li class="nav-item" id="menu-opener">
-            <a href="javascript:void()">menu <span class="circle">&raquo;</span></a>
+            <a href="javascript:void()">menu <span class="circle">&rarr;</span></a>
           </li>
         </ul>
     </div>
