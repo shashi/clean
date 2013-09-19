@@ -43,7 +43,7 @@ a:focus {
     margin: 2em;
     margin-left:1em;
     height: 95%;
-    margin-top: 2em;
+    margin-top: 70%;
     width: 80%;
 }
 .menu-part {
@@ -92,7 +92,6 @@ a:focus {
     margin: 0;
     margin-left: 1em;
     font-family: 'Lato';
-    font-size: 0.9em;
     padding: 0;
     list-style: none;
 }
@@ -437,6 +436,9 @@ div.name {
 
 .real-menu {
     display: none;
+    float: right;
+    margin-left: 7em;
+    margin-top: -14em;
     position:absolute;
 }
 

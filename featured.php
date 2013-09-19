@@ -1,10 +1,10 @@
-<div class="pure-u-1 featured-excerpt" style="position: relative; z-index: 0; background: url(/wp-content/podcast.jpg)">
-
-  <h1 class="inimage-subhead">Editors' Pick</h1>
-
 <?php
     the_post();
 ?>
+
+<div class="pure-u-1 featured-excerpt" style="position: relative; z-index: 0; background: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>)">
+
+  <h1 class="inimage-subhead">Editors' Pick</h1>
 
   <div class="surface pure-g-r">
     <div class="pure-u-4-5" class="post-description">
