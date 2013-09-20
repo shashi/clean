@@ -29,7 +29,7 @@ window.onscroll = onScroll;
                         <a href="/about-us">about</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/podcast">podcast</a>
+                        <a href="/category/podcast">podcast</a>
                     </li>
                     <li class="nav-item" id="menu-opener">
                         <a href="javascript:void()">menu &rarr;</a>
@@ -50,15 +50,17 @@ window.onscroll = onScroll;
             <div class="centered">
                 <?php echo get_avatar(get_the_author_meta('ID'), 96); ?>
              </div>
-                 <div class="name"><?php the_author(); ?></div>
+                 <div class="name">
+<?php the_author_posts_link(); ?>
+</div>
                     <p class="post-author pure-u-1">
                         <?php the_author_description(); ?>
                  </p>
                 <p class="post-date pure-u-1">
-                <strong>Published</strong> Dec. 09, 2012
+                <strong>Published</strong> <?php the_date('M. j, Y') ?>
                 </p>
                 <p class="post-categories pure-u-1">
-                <strong>In</strong> Leisure, Opinion, Gaming
+                <strong>In</strong> <?php _categories(); ?>
                 </p>
         </div>
     </header>

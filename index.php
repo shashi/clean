@@ -2,12 +2,12 @@
 
 <div class="pure-g-r" id="layout">
     <div class="content pure-u-1">
-        <?php if (is_front_page()) {
+        <?php if (is_home()) {
             require(dirname(__FILE__) . '/featured.php');
         } ?>
 
         <div class="posts pure-g-r">
-        <?php if (is_front_page()) { ?>
+        <?php if (is_home()) { ?>
             <h1 class="content-subhead recent pure-u-1">
                 <span>Recent Posts</span>
             </h1>

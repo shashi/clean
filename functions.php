@@ -104,3 +104,21 @@ function _posted_on() {
     echo '</p>';
 }
 endif;
+function frontpage_limit($limit){
+    $perPage = 11; // The number of posts per page
+
+    $page = $GLOBALS['wp_query']->query_vars['paged'];
+    $is_category = $GLOBALS['wp_query']->is_category;
+
+    if(!$page){
+        $page = 1;
+    }
+
+    if(is_home()){
+        return "LIMIT ".(($page-1)*$perPage).", ".$perPage;
+    }
+
+    return $limit;
+}
+
+add_filter('post_limits', 'frontpage_limit');

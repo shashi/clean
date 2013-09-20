@@ -446,10 +446,9 @@ div.name {
 
 .real-menu {
     display: none;
-    float: right;
     position:absolute;
+    top: 5em;
     margin-left: 7em;
-    top: 20%;
 }
 
 #nav li {
@@ -485,6 +484,16 @@ div.name {
 }
 .page .header {
     margin-top: 3em;
+}
+
+.distractions {
+    padding-top: 3em;
+    padding-left: 2em;
+
+}
+
+.post-categories a {
+    color: inherit;
 }
 
 @media (max-width: 900px) {

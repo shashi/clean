@@ -21,8 +21,18 @@
 
                 <div class="post-description pure-u-1">
                     <?php the_content(); ?>
-                </div>
+            </div>
+
+        <div class="fb-container">
+            <div class="fb-like" data-href="<?php the_permalink(); ?>" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+<br>
+<br>
+            <div class="fb-comments" data-href="<?php the_permalink(); ?>"></div>
+</div>
             </section>
+    <?php /* <div class="pure-u-1-5 distractions">
+            <div class="fb-like" data-href="<?php the_permalink(); ?>" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+            </div> */?>
         </div>
         <?php get_footer(); ?>
     </div>
