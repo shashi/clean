@@ -1,5 +1,8 @@
 <?php
 
+// Enable featured images.
+add_theme_support( 'post-thumbnails' );
+
 if ( ! function_exists( 'clean_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
