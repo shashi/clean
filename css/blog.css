@@ -1,3 +1,54 @@
+
+@font-face {
+  font-family: 'Rock Salt';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rock Salt'), local('RockSalt'), url(http://themes.googleusercontent.com/static/fonts/rocksalt/v4/Q94aHXFHGip10K5uxi1jOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/IQHow_FEYlDC4Gzy_m8fcgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alegreya'), local('Alegreya-Regular'), url(http://themes.googleusercontent.com/static/fonts/alegreya/v5/MYFQxfgoxFvFirdbdLj3M_esZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Alegreya Bold'), local('Alegreya-Bold'), url(http://themes.googleusercontent.com/static/fonts/alegreya/v5/F5BSMOSf_T8GT2wiqqpj3YbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Alegreya Black'), local('Alegreya-Black'), url(http://themes.googleusercontent.com/static/fonts/alegreya/v5/77GwhzeWPpmLIJUaM8KhxIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Alegreya Italic'), local('Alegreya-Italic'), url(http://themes.googleusercontent.com/static/fonts/alegreya/v5/Q-XbT1m22Fi9BEKb7y59OxsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Alegreya Bold Italic'), local('Alegreya-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/alegreya/v5/IWi8e5bpnqhMRsZKTcTUWgFhaRv2pGgT5Kf0An0s4MM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Alegreya Black Italic'), local('Alegreya-BlackItalic'), url(http://themes.googleusercontent.com/static/fonts/alegreya/v5/-L71QLH_XqgYWaI1GbOVhoPAkl-0rCkX4F4zIO7lYWE.woff) format('woff');
+}
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -6,17 +57,36 @@
 
 a {
     text-decoration: none;
-    color: #a1a17B;
+}
+p a {
+    text-decoration: none;
+    color: #6C6E58;
+}
+
+p a:hover {
+    border-bottom: 1px dotted #6C6E58;
 }
 
 body {
-    font-family: 'Lato';
+    font-family: Alegreya;
+    background: #F4F7D9;
+    color: #3E423A;
 }
 
+p {  
+    text-align: justify;  
+    -webkit-hyphens: auto;  
+    -moz-hyphens: auto;  
+    hyphens: auto;  
+} 
+
+a {
+    color: #6c6c58;
+}
 
 a:hover,
 a:focus {
-    text-decoration: underline;
+
 }
 
 /* LAYOUT CSS */
@@ -36,14 +106,13 @@ a:focus {
     width: 25%;
     background: url(../images/beach2.jpg);
     background-size:auto 100%;
-    color: #444;
 }
 
 .header {
     margin: 2em;
     margin-left:1em;
     height: 95%;
-    margin-top: 75%;
+    margin-top: 3em;
     width: 80%;
 }
 .page .real-menu {
@@ -52,11 +121,10 @@ a:focus {
 }
 .menu-part {
     padding: 0;
-    color: #999;
 }
 
 #clean-nav {
-    border-left: 1px solid #999;
+    border-left: 1px solid #E1E1BB;
 }
 .page #clean-nav {
     border-color: #E1E1BB;
@@ -72,19 +140,17 @@ a:focus {
     text-transform: none; 
     margin-right: 18px;
     /*font-family: 'Oleo Script Swash Caps';*/
-    font-family: Lato;
-    font-weight: 300;
+    font-family: 'Rock Salt';
     font-size: 28px;
-    text-transform: uppercase;
-    line-height: 0.9em;
+    line-height: 30px;
     width: 110px;
     text-align: right;
 }
 .brand-title a {
-    color: #333;
+    color: #6C6E58;
 }
 .page .brand-title a {
-    color: #2B445C;
+    color: #6C6E58;
 }
 .brand-title a:hover {
     text-decoration: none;
@@ -100,19 +166,19 @@ a:focus {
 .nav-list {
     margin: 0;
     margin-left: 1em;
-    font-family: 'Lato';
+    font-family: Lora;
+    font-style: italic;
     padding: 0;
     list-style: none;
 }
 .nav-item {
-    line-height: 18px;
+    line-height: 22px;
     font-size: 16px;
     zoom: 1;
 }
 .nav-item a {
     background: transparent;
     color: #444;
-    font-weight: 300;
 }
 .nav-item a:hover,
 .nav-item a:focus {
@@ -139,7 +205,7 @@ a:focus {
     margin-top: 2em;
 }
 .content-subhead span {
-    background: white;
+    background: #F4F7D9;
     padding: 0 2em;
 }
 .content-subhead .post-header {
@@ -158,7 +224,7 @@ a:focus {
     padding: 0.5em 2em;
     background: rgba(0, 0, 0, 1);
     z-index: 9;
-    color: #fff;
+    color: #F4F7D9;
 }
 .content-subhead.recent {
     margin-bottom: 0;
@@ -177,10 +243,20 @@ a:focus {
 }
 .post-title {
     font-size: 1.5em;
-    font-family: Lato;
-    font-weight: 800;
-    margin-bottom: 0.4em;
-    color: #333;
+    font-family: Alegreya;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0;
+    color: #417378;
+}
+.post-header a:hover {
+    text-decoration: none;
+}
+.post-header a:hover .post-title {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    color: #3E423A;
 }
 .avatar {
     border-radius: 50px;
@@ -190,15 +266,19 @@ a:focus {
     margin-left: 1em;
 }
 .page-meta-wrap {
-    font-family: 'PT Serif Caption';
-    color: #444;
-    font-size: 0.8em;
+    font-family: Lato;
+    color: #6c6e58;
+    font-size: 14px;
+}
+.page-meta-wrap p {
+    text-align: right;
 }
 
 div.name {
     color: #a1a17B;
     font-size: 1.5em;
-    font-family: Lato;
+    font-family: Alegreya;
+    font-style: italic;
     font-weight: bold;
 }
 .page-meta-wrap .post-author {
@@ -206,7 +286,7 @@ div.name {
 }
 
 .page-meta-wrap b,.page-meta-wrap strong {
-    font-family: Lato;
+    font-family: Alegreya;
 }
 .page-meta-wrap {
     border-top: 1px solid #E1E1BB;
@@ -218,10 +298,10 @@ div.name {
 }
 
 .post-description {
-    font-family: Lato;
+    font-family: Alegreya;
     font-size: 16px;
     font-weight: normal;
-    color: #333;
+    color: #3E423A;
     line-height: 24px;
 }
 .page-meta-wrap {
@@ -231,14 +311,17 @@ div.name {
     margin-top: 0.5em;
 }
 .post-meta {
-    color: #a1a17B;
-    font-size: 0.8em;
+    color: #6c6e58;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
     font-family: 'Lato';
     margin: 0;
     font-style: italic;
 }
 .post-meta a {
     font-style: normal;
+    color: #6c6e58;
 }
 
 .post-category {
@@ -264,7 +347,7 @@ div.name {
 .post-image-meta {
     margin-top: -3.5em;
     margin-left: 1em;
-    color: #fff;
+    color: #F4F7D9;
     text-shadow: 0 1px 1px #333;
 }
 
@@ -297,16 +380,22 @@ div.name {
     color: #666;
 }
 .static-page .post-title, .page .post-title {
+    font-size: 3em;
     font-weight: bold;
-    font-size: 2.2em;
-    color: #444;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: #eee 1px solid;
+    color: #417378;
 }
 .page .post-description, .static-page .post-description {
-    color: #222;
-    font-family: 'PT Serif';
+    color: #3E424A;
+    font-family: Alegreya;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 34px;
+}
+.page .post-description p, .static-page .post-description p {
+   margin-bottom: 1.5em;
 }
 .page .header {
 }
@@ -328,6 +417,8 @@ div.name {
     position: relative;
 }
 
+
+
 .featured-excerpt .surface {
     padding: 2em;
     width:100%;
@@ -341,10 +432,11 @@ div.name {
     margin-bottom: 1em;
 }
 .featured-excerpt  {
-    color: #fff;
+    color: #F4F7D9;
 }
 .featured-excerpt .post-title {
-    color: #fff;
+    color: #F4F7D9;
+    text-align: left;
 }
 
 .featured-excerpt a {
@@ -355,6 +447,7 @@ div.name {
     float: right;
     clear: both;
     text-align: right;
+    margin-top: 1em;
 }
 .featured-excerpt .avatar {
     background: white;
@@ -362,15 +455,13 @@ div.name {
 }
 
 .featured-excerpt .post-description {
+    font-family: Alegreya;
     margin: 0;
     margin-bottom: 0.5em;
     color: #ccc;
 }
 .featured-excerpt .post-title {
     margin: 0;
-}
-.featured-excerpt .post-meta {
-    margin-top: 1em;
 }
 
 .brand-title em {
