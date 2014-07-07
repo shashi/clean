@@ -28,7 +28,6 @@
 
   </div>
   </header>
-  <div class="photo-credits">Photograph courtesy Jai Ram (batch of 2012)</div>
 </div>
 <script src="<?php echo get_template_directory_uri() . "/js/jquery-1.10.2.min.js" ?>"></script>
 <script>

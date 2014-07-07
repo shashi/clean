@@ -34,28 +34,16 @@ a:focus {
     bottom: 0;
     left: 0;
     width: 25%;
-    background: url(../images/jairam1.jpg);
+    background: url(../images/beach2.jpg);
     background-size:auto 100%;
-    background-position: center;
     color: #444;
-}
-.photo-credits {
-    position: absolute;
-    font-size: 0.8em;
-    opacity: 0.3;
-    color: #999;
-    bottom: 0.5em;
-    right: 0.5em;
-}
-.photo-credits:hover {
-    opacity: 0.8;
 }
 
 .header {
     margin: 2em;
-    margin-left:-1.5em;
+    margin-left:1em;
     height: 95%;
-    margin-top: 90%;
+    margin-top: 75%;
     width: 80%;
 }
 .page .real-menu {
@@ -68,7 +56,7 @@ a:focus {
 }
 
 #clean-nav {
-    border-left: 1px solid #666;
+    border-left: 1px solid #999;
 }
 .page #clean-nav {
     border-color: #E1E1BB;
@@ -496,7 +484,6 @@ div.name {
 }
 .page .header {
     margin-top: 3em;
-    margin-left: 1em;
 }
 
 .distractions {

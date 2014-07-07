@@ -19,6 +19,48 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
     box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora'), local('Lora-Regular'), url(http://themes.googleusercontent.com/static/fonts/lora/v7/5-AYViExptypIdFoLKAxTA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lora Bold'), local('Lora-Bold'), url(http://themes.googleusercontent.com/static/fonts/lora/v7/XpaepWHcooQHSRnzoohUng.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lora Italic'), local('Lora-Italic'), url(http://themes.googleusercontent.com/static/fonts/lora/v7/wXeMvRh7Gui36p_I04Ex6g.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Lato Hairline'), local('Lato-Hairline'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v7/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}
 a {
     text-decoration: none;
     color: #a1a17B;
@@ -28,6 +70,12 @@ body {
     font-family: 'Lato';
 }
 
+p {  
+    text-align: justify;  
+    -webkit-hyphens: auto;  
+    -moz-hyphens: auto;  
+    hyphens: auto;  
+}  
 
 a:hover,
 a:focus {
@@ -49,28 +97,16 @@ a:focus {
     bottom: 0;
     left: 0;
     width: 25%;
-    background: url(../images/jairam1.jpg);
+    background: url(../images/pujar2.jpg);
     background-size:auto 100%;
-    background-position: center;
     color: #444;
-}
-.photo-credits {
-    position: absolute;
-    font-size: 0.8em;
-    opacity: 0.3;
-    color: #999;
-    bottom: 0.5em;
-    right: 0.5em;
-}
-.photo-credits:hover {
-    opacity: 0.8;
 }
 
 .header {
     margin: 2em;
-    margin-left:-1.5em;
+    margin-left:1em;
     height: 95%;
-    margin-top: 90%;
+    margin-top: 3em;
     width: 80%;
 }
 .page .real-menu {
@@ -79,11 +115,11 @@ a:focus {
 }
 .menu-part {
     padding: 0;
-    color: #999;
+    color: #E1E1BB;
 }
 
 #clean-nav {
-    border-left: 1px solid #666;
+    border-left: 1px solid #E1E1BB;
 }
 .page #clean-nav {
     border-color: #E1E1BB;
@@ -108,7 +144,7 @@ a:focus {
     text-align: right;
 }
 .brand-title a {
-    color: #333;
+    color: #E1E1BB;
 }
 .page .brand-title a {
     color: #2B445C;
@@ -138,7 +174,7 @@ a:focus {
 }
 .nav-item a {
     background: transparent;
-    color: #444;
+    color: #E1E1BB;
     font-weight: 300;
 }
 .nav-item a:hover,
@@ -350,7 +386,7 @@ div.name {
 
 .featured-excerpt {
     z-index: 0;
-    margin-top: 0;
+    margin-top: 2em;
     padding-top: 4em;
     position: relative;
 }
@@ -511,7 +547,6 @@ div.name {
 }
 .page .header {
     margin-top: 3em;
-    margin-left: 1em;
 }
 
 .distractions {
