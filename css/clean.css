@@ -162,7 +162,7 @@ a:focus {
     text-align: right;
 }
 .brand-title a {
-    color: #6C6E58;
+    color: #3E423A;
 }
 .page .brand-title a {
     color: #6C6E58;
@@ -399,7 +399,7 @@ div.name {
     font-weight: bold;
     margin-bottom: 0.5em;
     padding-bottom: 0.5em;
-    border-bottom: #eee 1px solid;
+    border-bottom: #e1e1bb 1px solid;
     color: #417378;
 }
 .page .post-description, .static-page .post-description {
@@ -427,8 +427,7 @@ div.name {
 
 .featured-excerpt {
     z-index: 0;
-    margin-top: 0;
-    padding-top: 4em;
+    margin-top: 2em;
     position: relative;
 }
 
